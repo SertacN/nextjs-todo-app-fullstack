@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} container py-4 antialiased text-foreground bg-background h-screen items-center flex justify-center`}
+        className={`${inter.className} container py-4 antialiased text-foreground bg-background min-h-screen items-center flex justify-center`}
       >
         <Providers>
           <Navbar />
