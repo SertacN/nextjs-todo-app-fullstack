@@ -2,6 +2,7 @@
 import { Button } from "@nextui-org/react";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
+import { Tabs, Tab } from "@nextui-org/tabs";
 
 const ThemeButton = () => {
   const { theme, setTheme } = useTheme();
@@ -14,24 +15,24 @@ const ThemeButton = () => {
   if (!mounted) {
     return null;
   }
-
+  const handleThemeChange = (theme: string) => {
+    setTheme(theme);
+  };
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full">
       <h2 className="text-4xl mb-5">To-do App</h2>
       <div>
-        <Button color="primary" onClick={() => setTheme("light")}>
-          Light
-        </Button>
-        <Button
+        <Tabs
           color="primary"
-          className="mx-4"
-          onClick={() => setTheme("dark")}
+          aria-label="ThemeButton"
+          variant="bordered"
+          size="lg"
+          onSelectionChange={(key: any) => handleThemeChange(key)}
         >
-          Dark
-        </Button>
-        <Button color="primary" onClick={() => setTheme("modern")}>
-          Modern
-        </Button>
+          <Tab key="light" title="Light" />
+          <Tab key="dark" title="Dark" />
+          <Tab key="modern" title="Modern" />
+        </Tabs>
       </div>
     </div>
   );
