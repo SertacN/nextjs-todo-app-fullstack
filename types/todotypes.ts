@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from "react";
 
 export type TodoType = {
-  todoName: string;
-  id: number;
+  todoName?: string;
+  id: string | number;
 };
 
 export type TodoPropsType = {

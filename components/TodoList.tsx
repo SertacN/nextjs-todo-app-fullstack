@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Button } from "@nextui-org/react";
 import { useRef } from "react";
 import { TodoPropsType } from "@/types/todotypes";
+import { doc, deleteDoc } from "firebase/firestore";
+import { db } from "@/app/firebase";
 
 export default function TodoList({ todos, setTodos }: TodoPropsType) {
   // Drag Todo
@@ -17,12 +19,8 @@ export default function TodoList({ todos, setTodos }: TodoPropsType) {
   }
 
   // Delete Todo
-  const handleDelete = (id: number) => {
-    setTodos(
-      todos.filter((todo) => {
-        return todo.id !== id;
-      })
-    );
+  const deleteTodo = async (id: string) => {
+    await deleteDoc(doc(db, "todos", id));
   };
 
   return (
@@ -50,7 +48,7 @@ export default function TodoList({ todos, setTodos }: TodoPropsType) {
             <Button
               size="sm"
               color="danger"
-              onClick={() => handleDelete(todo.id)}
+              onClick={() => deleteTodo(todo.id.toString())}
             >
               X
             </Button>
