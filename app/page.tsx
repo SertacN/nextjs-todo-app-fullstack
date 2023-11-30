@@ -1,5 +1,5 @@
-import TodoCreate from "@/components/TodoCreate";
+import TodoContainer from "@/containers/TodoContainer";
 
 export default function Home() {
-  return <TodoCreate />;
+  return <TodoContainer />;
 }

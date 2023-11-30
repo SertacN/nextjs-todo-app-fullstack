@@ -23,7 +23,7 @@ export default function RootLayout({
       >
         <Providers>
           <Navbar />
-          <main>{children}</main>
+          <main className="w-80">{children}</main>
         </Providers>
       </body>
     </html>
