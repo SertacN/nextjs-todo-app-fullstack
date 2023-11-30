@@ -34,3 +34,31 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+// GET İŞLEMİ useEffect ile
+// const fetchData = async () => {
+// const response = await axios.get("URL");
+// setTodos(response.data);
+// };
+// DELETE İŞLEMİ
+// const deleteTodoItem = async (id) => {
+// await axios.delete(`URL${id}`);
+// const newTodosArray = todos.filter((item) => {
+// return item.id !== id;
+// });
+// setTodos(newTodosArray);
+// };
+
+// Oluşturulan todolar backende yollanacak
+// Backendden çekilen todolar TodoList componentinde listenecek
+// POST işlemi burada
+// GET işlemi list componentinde olmalı.
+// DELETE işlemi list componentinde olmalı.
+
+// POST İŞLEMİ
+// const response = await axios.post("URL" , {
+// todoName:value,
+// id:todos.length,
+// })
+// const newTodosArray = [...todos,response.data]
+// setTodos([newTodosArray])
