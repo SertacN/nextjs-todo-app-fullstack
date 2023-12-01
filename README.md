@@ -3,11 +3,25 @@
 <p>Client side: NextJS, Typescript, NextUI, TailwindCSS, Framer Motion</p>
 <p>Server side: Firebase</p>
 
+- Light, Dark, Modern theme mode
+- Drag and Drop function
+- Animated elements
+- Todo Count
+- Create, Read, Delete operation from backend
+- Input validation
+- Responsive Design
+
 **Future plan:** Firebase authentication or nextAuth for Login with google, github etc.
 
 ## Getting Started
 
-First, run the development server:
+First install package
+
+```
+npm install
+```
+
+Second, run the development server:
 
 ```bash
 npm run dev
